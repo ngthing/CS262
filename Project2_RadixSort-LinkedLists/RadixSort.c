@@ -1,7 +1,3 @@
-// Thi Nguyen G00987452
-// CS 262 Section 209 
-// Project 2
-
 
 #include <stdlib.h>
 #include <stdio.h>
