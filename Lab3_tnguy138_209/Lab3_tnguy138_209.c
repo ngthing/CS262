@@ -1,5 +1,5 @@
 /*
-Created by Thi Nguyen 9/3/16
+Created by Thi Nguyen 9/22/15
 Topics: Branching, Loops and Functions
 This program prints a menu and takes user choices as input. The user will make choices regarding different "triangles" 
 that will be printed to the screen.
