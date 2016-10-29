@@ -1,3 +1,11 @@
+/*
+Created by Thi Nguyen 10/07/15
+This program encrypts and decrypts text files. 
+symmetric_encrypt will take three arguments: a key and two text files, an <inputfile> and <outputfile>. If the first text file
+is a plaintext file, the program will produce an encrypted text file (ciphertext). Conversely, if the first file is a
+ciphertext file the output will be a decrypted text file (plaintext). 
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
