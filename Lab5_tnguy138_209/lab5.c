@@ -1,3 +1,8 @@
+/*
+Created by Thi Nguyen 6/9/16
+Topic: Command Line Arguments, File I/O and Using Macros for Debugging
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
