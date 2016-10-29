@@ -1,6 +1,9 @@
-// Thi Nguyen G00987452
-// CS 262 Section 209 
-// Lab8
+/*
+Created by Thi Nguyen 10/27/15
+Topic: Structs and Dynamic Arrays
+This program will accept user input and store it in a dynamic array of structs. 
+*/
+
 
 
 #include <stdio.h>
@@ -8,7 +11,7 @@
 #include <string.h>
 
 typedef struct Location Location;
-
+// Define struct
 struct Location 
 {
 	char locName[35];
