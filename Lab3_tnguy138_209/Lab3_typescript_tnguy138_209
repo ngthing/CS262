@@ -1,0 +1,274 @@
+Script started on Tue 22 Sep 2015 12:54:29 PM EDT
+bash-4.1$ uname -a
+Linux zeus-1 2.6.32-573.3.1.el6.centos.plus.x86_64 #1 SMP Fri Aug 14 01:00:05 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+bash-4.1$ ls
+Lab3_tnguy138_209.c  Lab3_typescript_tnguy138_209  Makefile
+bash-4.1$ cat Lab3_tnguy138_209.c
+// Thi Nguyen G00987452
+// CS262 , 209
+// Lab3 
+
+#include <stdio.h>
+
+void printMenu();
+char promptChar();
+int promptNumber();
+void printTriangle1(int,char);
+void printTriangle2(int,char);
+
+main()
+{
+	char C =' ';
+	int N =0;
+	int in = 1;
+	do
+	{
+		printMenu();
+		char input;
+		scanf(" %c", &input);
+		printf("Your menu input is: %c\n",input);
+		switch (input)
+	{	case 'C': case 'c':
+		    printf("Promt Character\n\n");
+		    C = promptChar();
+		    printf("The character you entered is:%c\n\n", C);
+		    break;	
+		case 'N' : case 'n':
+		    printf("Promt Number\n\n");
+		    N = promptNumber();
+		    break;
+		case '1':
+		    printf("Print Triangle Type 1\n\n");
+		    printTriangle1(N,C);	
+		    break;
+		case '2':
+		    printf("Print Triangle Type 2\n\n");
+		    printTriangle2(N,C);
+		    break;
+		case 'Q': case 'q':
+		    printf("Quit the program. Goodbye!\n");
+		    in = 0;
+		    break;
+		default: 
+		    printf("Invalid input. Please try again.\n\n");
+		    break;
+	}
+	} while(in == 1);
+		    
+}
+
+void printMenu()	
+{
+	printf("Please select an option from the Menu Choice below:\n");
+	printf("In order to \n");
+	printf("Enter/Change Character, type C or c. \n");
+	printf("Enter/Change Number, type N or n.\n");
+	printf("Print Triangle Type 1 (Left Justified), type 1.\n");
+	printf("Print Triangle Type 2 (Right Justified), type 2.\n");
+	printf("Quit the program, type Q or q.\n");
+}
+
+char promptChar()
+{
+	char input;
+	printf("Please enter a single character:\n");
+	scanf(" %c", &input);
+	return input;
+}
+
+int promptNumber()
+{
+	int validInput;
+	int input;
+	do
+	{	
+		printf("Please enter a number between 1 and 15 (inclusive):\n");
+		scanf("%d",&input);
+		if ( input >= 1 && input <= 15)
+		{   printf("The number you entered is: %d\n\n", input);
+		    validInput=1;
+		}	
+		else
+		{   printf("Invalid number. Please try again.\n");
+		    validInput =0;
+		}
+	}while (validInput==0);
+
+	return input;
+}	
+
+void printTriangle2(int n, char c)
+{
+	int i, j;
+	for (i = 1; i <= n;i++)
+	{
+	    for (j = 1; j <=i; j++)
+		{ printf("%c",c);}
+	    printf("\n");
+	}
+}		
+
+void printTriangle1(int n, char c)
+{
+	int i, j, z;
+	char blank=' ';
+	for (i = 1; i <=n; i++)
+	{
+	    j = n- i;
+	    z=i;		
+	    for ( j ; j>0; j--)
+	    {	 printf("%c",blank);}
+	     
+	      for ( z ; z>0; z--)
+		 { printf("%c", c);}
+  	    
+	    printf("\n");
+	}
+} 
+bash-4.1$ am[K[Kmake
+gcc -o Lab3_tnguy138_209 Lab3_tnguy138_209.c -Wall -g
+Lab3_tnguy138_209.c:14: warning: return type defaults to ‘int’
+Lab3_tnguy138_209.c: In function ‘printTriangle1’:
+Lab3_tnguy138_209.c:113: warning: statement with no effect
+Lab3_tnguy138_209.c:116: warning: statement with no effect
+Lab3_tnguy138_209.c: In function ‘main’:
+Lab3_tnguy138_209.c:52: warning: control reaches end of non-void function
+bash-4.1$ make
+make: `Lab3_tnguy138_209' is up to date.
+bash-4.1$ ls
+Lab3_tnguy138_209  Lab3_tnguy138_209.c	Lab3_typescript_tnguy138_209  Makefile
+bash-4.1$ Lab3_tnguy138_209 < sa[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[KLab3_tnguy138_209 <sample[K[K[K[K[K [K[K saml[Kple_t[Kinput_tex[K[K[K[K.tx[Ke[Kxt
+bash: sample_input.txt: No such file or directory
+bash-4.1$ Lab3_input.txt:[K[K[K[K[K[K[K[K[K[K[K[K[K[K[KLab3_tnguy138_209 < sample_input.txthsample_input.txtosample_input.txtmsample_input.txtesample_input.txtsample_input.txt[Ksample_input.txt[Ksample_input.txt[Ksample_input.txt[K/sample_input.txthsample_input.txtosample_input.txtmsample_input.txtesample_input.txt/sample_input.txttsample_input.txtnsample_input.txtgsample_input.txtusample_input.txtysample_input.txt1sample_input.txt3sample_input.txt8sample_input.txt/sample_input.txt
+Please select an option from the Menu Choice below:
+In order to 
+Enter/Change Character, type C or c. 
+Enter/Change Number, type N or n.
+Print Triangle Type 1 (Left Justified), type 1.
+Print Triangle Type 2 (Right Justified), type 2.
+Quit the program, type Q or q.
+Your menu input is: 1
+Print Triangle Type 1
+
+Please select an option from the Menu Choice below:
+In order to 
+Enter/Change Character, type C or c. 
+Enter/Change Number, type N or n.
+Print Triangle Type 1 (Left Justified), type 1.
+Print Triangle Type 2 (Right Justified), type 2.
+Quit the program, type Q or q.
+Your menu input is: 2
+Print Triangle Type 2
+
+Please select an option from the Menu Choice below:
+In order to 
+Enter/Change Character, type C or c. 
+Enter/Change Number, type N or n.
+Print Triangle Type 1 (Left Justified), type 1.
+Print Triangle Type 2 (Right Justified), type 2.
+Quit the program, type Q or q.
+Your menu input is: C
+Promt Character
+
+Please enter a single character:
+The character you entered is:o
+
+Please select an option from the Menu Choice below:
+In order to 
+Enter/Change Character, type C or c. 
+Enter/Change Number, type N or n.
+Print Triangle Type 1 (Left Justified), type 1.
+Print Triangle Type 2 (Right Justified), type 2.
+Quit the program, type Q or q.
+Your menu input is: 1
+Print Triangle Type 1
+
+Please select an option from the Menu Choice below:
+In order to 
+Enter/Change Character, type C or c. 
+Enter/Change Number, type N or n.
+Print Triangle Type 1 (Left Justified), type 1.
+Print Triangle Type 2 (Right Justified), type 2.
+Quit the program, type Q or q.
+Your menu input is: 2
+Print Triangle Type 2
+
+Please select an option from the Menu Choice below:
+In order to 
+Enter/Change Character, type C or c. 
+Enter/Change Number, type N or n.
+Print Triangle Type 1 (Left Justified), type 1.
+Print Triangle Type 2 (Right Justified), type 2.
+Quit the program, type Q or q.
+Your menu input is: n
+Promt Number
+
+Please enter a number between 1 and 15 (inclusive):
+Invalid number. Please try again.
+Please enter a number between 1 and 15 (inclusive):
+Invalid number. Please try again.
+Please enter a number between 1 and 15 (inclusive):
+The number you entered is: 9
+
+Please select an option from the Menu Choice below:
+In order to 
+Enter/Change Character, type C or c. 
+Enter/Change Number, type N or n.
+Print Triangle Type 1 (Left Justified), type 1.
+Print Triangle Type 2 (Right Justified), type 2.
+Quit the program, type Q or q.
+Your menu input is: 1
+Print Triangle Type 1
+
+        o
+       oo
+      ooo
+     oooo
+    ooooo
+   oooooo
+  ooooooo
+ oooooooo
+ooooooooo
+Please select an option from the Menu Choice below:
+In order to 
+Enter/Change Character, type C or c. 
+Enter/Change Number, type N or n.
+Print Triangle Type 1 (Left Justified), type 1.
+Print Triangle Type 2 (Right Justified), type 2.
+Quit the program, type Q or q.
+Your menu input is: 2
+Print Triangle Type 2
+
+o
+oo
+ooo
+oooo
+ooooo
+oooooo
+ooooooo
+oooooooo
+ooooooooo
+Please select an option from the Menu Choice below:
+In order to 
+Enter/Change Character, type C or c. 
+Enter/Change Number, type N or n.
+Print Triangle Type 1 (Left Justified), type 1.
+Print Triangle Type 2 (Right Justified), type 2.
+Quit the program, type Q or q.
+Your menu input is: F
+Invalid input. Please try again.
+
+Please select an option from the Menu Choice below:
+In order to 
+Enter/Change Character, type C or c. 
+Enter/Change Number, type N or n.
+Print Triangle Type 1 (Left Justified), type 1.
+Print Triangle Type 2 (Right Justified), type 2.
+Quit the program, type Q or q.
+Your menu input is: Q
+Quit the program. Goodbye!
+bash-4.1$ make clean
+rm -f Lab3_tnguy138_209
+bash-4.1$ exit
+
+Script done on Tue 22 Sep 2015 12:59:20 PM EDT

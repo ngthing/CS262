@@ -1,0 +1,75 @@
+Script started on Mon 05 Oct 2015 05:23:35 PM EDT
+bash-4.1$ uname -a
+Linux zeus-0 2.6.32-573.7.1.el6.centos.plus.x86_64 #1 SMP Wed Sep 23 03:02:55 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+bash-4.1$ ls
+lab5.c	Lab5_typescript_tnguy138_209  Makefile	MakeNDEBUG
+bash-4.1$ make
+gcc -o Lab5_tnguy138_209 lab5.c  -Wall -g
+lab5.c:5: warning: return type of ‘main’ is not ‘int’
+bash-4.1$ Lab5_tnguy138_209 lab5.x[Kc lab5.txt 
+#include <stdio.h>
+#include <stdlib.h>
+#include <assert.h>
+
+void main ( int argc, char *argv[])
+{
+	FILE *infile = NULL;
+	FILE *outfile = NULL;
+	char c; 
+	
+	if ( argc != 3) 
+	{ printf("You have entered an invalid command line. Please try again.\n");
+	  exit(1);
+	}
+	
+	infile = fopen( argv[1], "r");
+	assert (infile != NULL);
+	 if (infile == NULL)
+        { printf("Error opening input file.\n");
+          exit(1);
+        } 
+	
+	outfile = fopen (argv[2], "w");
+	 assert (outfile!= NULL);
+	 if (outfile == NULL)
+        { printf("Error opening output file.\n");
+         exit(1);
+        } 
+
+
+
+	
+	while ((c = fgetc(infile)) != EOF)
+	{
+	 #ifndef NDEBUG
+
+		printf("%c",c);
+	 #endif
+		fprintf ( outfile, "%c" , c);	
+	}
+
+	fclose(infile);
+	fclose(outfile);
+	exit(0);
+}
+
+bash-4.1$ diff b[Klab5.c lab5.tc[Kxt
+bash-4.1$ diff lab5.c lab5.txt[C[C[C[C[C[C[C[C[C[CLab5_tnguy138_209 lab5.c lab5.txt 5.c lab5.txt [K
+Lab5_tnguy138_209: lab5.c:17: main: Assertion `infile != ((void *)0)' failed.
+Aborted (core dumped)
+bash-4.1$ make clean
+rm -f Lab5_tnguy138_209
+bash-4.1$ make -f MakeNDEBUG
+gcc -o Lab5_tnguy138_209 lab5.c -DNDEBUG -Wall -g
+lab5.c:5: warning: return type of ‘main’ is not ‘int’
+bash-4.1$ make -f MakeNDEBUGclean[KLab5_tnguy138_209 la5.c lab5.txt [C[C[C[C[C[C[C[C[C[Cdiff lab5.c lab5.txt[K[C[C[C[C[C[C[C[C[C[CLab5_tnguy138_209 lab5.c lab5.txt 
+bash-4.1$ diff lab5.c lab5.txt 
+bash-4.1$ diff lab5.c lab5.txt [C[C[C[C[C[C[C[C[C[CLab5_tnguy138_209 lab5.c lab5.txt 5.c lab5.txt [K[C.c lab5.txt [K
+Error opening input file.
+bash-4.1$ ls
+lab5.c	Lab5_tnguy138_209  lab5.txt  Lab5_typescript_tnguy138_209  Makefile  MakeNDEBUG
+bash-4.1$ make clean
+rm -f Lab5_tnguy138_209
+bash-4.1$ rm lab[K[K[K[K[K[Krm lab[K[K[K[K[K[Kexit
+
+Script done on Mon 05 Oct 2015 05:27:19 PM EDT

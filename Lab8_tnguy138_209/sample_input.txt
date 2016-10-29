@@ -1,0 +1,45 @@
+2
+A
+George Mason University
+A great Computer Science Department with fantastic CS262 professors!
+38.83
+-77.30
+a
+Washington Monument
+The world's tallest obelisk
+38.8895
+-77.0352
+P
+j
+42
+A
+The Eiffel Tower
+Weren't they supposed to tear this down 100 years ago?
+48.8582
+2.2945
+p
+a
+The Great Pyramid at Giza
+The biggest razor blade sharpener in the world!
+29.9792
+31.1344
+A
+South Pole
+Any Longitude value will do for this location
+-90.0
+-123.4567
+p
+a
+The Sydney Opera House
+We need some location in the southern hemisphere (besides the South Pole)
+-33.8587
+151.2140
+a
+The middle of the ocean
+There is a big whale there right ....  Now!
+-10.342
+-18.563
+p
+q
+
+

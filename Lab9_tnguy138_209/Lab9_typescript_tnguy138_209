@@ -1,0 +1,132 @@
+Script started on Sun 01 Nov 2015 12:36:59 PM EST
+[?1034hbash-4.1$ uname -a
+Linux zeus-1 2.6.32-573.7.1.el6.centos.plus.x86_64 #1 SMP Wed Sep 23 03:02:55 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+bash-4.1$ pwd
+/home/tnguy138/Lab9_tnguy138_209
+bash-4.1$ ls
+Lab9_tnguy138_209.c  Lab9_typescript_tnguy138_209  Makefile
+bash-4.1$ make
+gcc -o Lab9_tnguy138_209 Lab9_tnguy138_209.c  -Wall -g -O0
+bash-4.1$ Lab9_tnguy138_209 262262 50 1000
+The 1 random integer is 178
+The 2 random integer is 886
+The 3 random integer is 374
+The 4 random integer is 179
+The 5 random integer is 454
+The 6 random integer is 56
+The 7 random integer is 702
+The 8 random integer is 923
+The 9 random integer is 885
+The 10 random integer is 27
+The 11 random integer is 531
+The 12 random integer is 825
+The 13 random integer is 179
+The 14 random integer is 133
+The 15 random integer is 698
+The 16 random integer is 987
+The 17 random integer is 111
+The 18 random integer is 878
+The 19 random integer is 683
+The 20 random integer is 332
+The 21 random integer is 473
+The 22 random integer is 95
+The 23 random integer is 930
+The 24 random integer is 884
+The 25 random integer is 244
+The 26 random integer is 869
+The 27 random integer is 260
+The 28 random integer is 161
+The 29 random integer is 811
+The 30 random integer is 115
+The 31 random integer is 345
+The 32 random integer is 989
+The 33 random integer is 691
+The 34 random integer is 719
+The 35 random integer is 859
+The 36 random integer is 145
+The 37 random integer is 775
+The 38 random integer is 560
+The 39 random integer is 758
+The 40 random integer is 350
+The 41 random integer is 277
+The 42 random integer is 288
+The 43 random integer is 865
+The 44 random integer is 456
+The 45 random integer is 421
+The 46 random integer is 563
+The 47 random integer is 133
+The 48 random integer is 532
+The 49 random integer is 440
+The 50 random integer is 506
+The list of random integers is:
+27 56 95 111 115 133 133 145 161 178 179 179 244 260 277 288 332 345 350 374 421 440 454 456 473 506 531 532 560 563 683 691 698 702 719 758 775 811 825 859 865 869 878 884 885 886 923 930 987 989 
+bash-4.1$ valgrind --leak-check=yes l[KLab9_tnguy138_209 262262 50 1000
+==30189== Memcheck, a memory error detector
+==30189== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+==30189== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+==30189== Command: Lab9_tnguy138_209 262262 50 1000
+==30189== 
+The 1 random integer is 178
+The 2 random integer is 886
+The 3 random integer is 374
+The 4 random integer is 179
+The 5 random integer is 454
+The 6 random integer is 56
+The 7 random integer is 702
+The 8 random integer is 923
+The 9 random integer is 885
+The 10 random integer is 27
+The 11 random integer is 531
+The 12 random integer is 825
+The 13 random integer is 179
+The 14 random integer is 133
+The 15 random integer is 698
+The 16 random integer is 987
+The 17 random integer is 111
+The 18 random integer is 878
+The 19 random integer is 683
+The 20 random integer is 332
+The 21 random integer is 473
+The 22 random integer is 95
+The 23 random integer is 930
+The 24 random integer is 884
+The 25 random integer is 244
+The 26 random integer is 869
+The 27 random integer is 260
+The 28 random integer is 161
+The 29 random integer is 811
+The 30 random integer is 115
+The 31 random integer is 345
+The 32 random integer is 989
+The 33 random integer is 691
+The 34 random integer is 719
+The 35 random integer is 859
+The 36 random integer is 145
+The 37 random integer is 775
+The 38 random integer is 560
+The 39 random integer is 758
+The 40 random integer is 350
+The 41 random integer is 277
+The 42 random integer is 288
+The 43 random integer is 865
+The 44 random integer is 456
+The 45 random integer is 421
+The 46 random integer is 563
+The 47 random integer is 133
+The 48 random integer is 532
+The 49 random integer is 440
+The 50 random integer is 506
+The list of random integers is:
+27 56 95 111 115 133 133 145 161 178 179 179 244 260 277 288 332 345 350 374 421 440 454 456 473 506 531 532 560 563 683 691 698 702 719 758 775 811 825 859 865 869 878 884 885 886 923 930 987 989 
+==30189== 
+==30189== HEAP SUMMARY:
+==30189==     in use at exit: 0 bytes in 0 blocks
+==30189==   total heap usage: 51 allocs, 51 frees, 816 bytes allocated
+==30189== 
+==30189== All heap blocks were freed -- no leaks are possible
+==30189== 
+==30189== For counts of detected and suppressed errors, rerun with: -v
+==30189== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 6 from 6)
+bash-4.1$ exit
+
+Script done on Sun 01 Nov 2015 12:43:08 PM EST
