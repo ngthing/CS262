@@ -1,6 +1,8 @@
-// Thi Nguyen G00987452
-// CS262 , 209
-// Lab3 
+/*
+Created by Thi Nguyen 9/3/16
+This program prints a menu and takes user choices as input. The user will make choices regarding different "triangles" 
+that will be printed to the screen.
+*/
 
 #include <stdio.h>
 
