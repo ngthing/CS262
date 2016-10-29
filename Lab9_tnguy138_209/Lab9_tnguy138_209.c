@@ -1,3 +1,12 @@
+/*
+Created by Thi Nguyen 11/03/15
+Topic: Linked Lists
+This program will create and manipulate a simple linked list. For each node in the linked list, the program will generate 
+a random number, create a node that holes that number, and insert that node into its sorted position in the linked list. 
+Once the nodes are inserted, the program will traverse the list, printing the value held in each node. 
+Then the program will clean up the list (deleting all nodes) and exit the program. 
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 
