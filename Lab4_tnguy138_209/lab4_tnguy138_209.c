@@ -1,5 +1,6 @@
 /*
 Created by Thi Nguyen 6/9/16
+Topic: Randing numbers and Sorting
 This C program will create permutations of numbers. 
 Specifically, it will initialize an array of numbers in counting order, and then will use a random number generator to create 
 a permutation (random shuffle). It will then print the shuffled array of numbers to output
