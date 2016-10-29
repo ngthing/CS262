@@ -1,7 +1,7 @@
 CS262 Lab 6  Debugging
 Question / Answer Sheet
 
-Student Name ____Thi Nguyen__                                               G Number G00987452
+Student Name ____Thi Nguyen__                                               
 
 Lab TA : Mohammad Rezaeirad                                             Lab Section : 209
 
