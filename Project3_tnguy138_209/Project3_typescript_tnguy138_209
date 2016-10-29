@@ -1,0 +1,121 @@
+Script started on Tue 01 Dec 2015 09:13:13 PM EST
+[?1034hbash-4.1$ uname -a
+Linux zeus-1 2.6.32-573.8.1.el6.centos.plus.x86_64 #1 SMP Tue Nov 10 18:20:27 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+bash-4.1$ ls
+bin	   include	     obj       Project3_typescript_tnguy138_209
+cs262.pgm  Makefile	     payload   src
+half.pgm   MakeStegoExtract  payload1  Stego1.pgm
+bash-4.1$ make
+gcc -W -O3 -I./include  -c src/Stego.c -o obj/Stego.o
+gcc -W -O3 -I./include  -c src/image.c -o obj/image.o
+gcc -W -O3 -I./include  -o bin/Stego ./obj/Stego.o ./obj/image.o
+bash-4.1$ make -f MakeStegoExtract 
+gcc -W -O3 -I./include  -c src/StegoExtract.c -o obj/StegoExtract.o
+gcc -W -O3 -I./include  -o bin/StegoExtract ./obj/StegoExtract.o ./obj/image.o
+bash-4.1$ ls[K[Kbin/M[KStego cs262.pgm Stego.pgm payload
+
+Reading input file 'cs262.pgm'
+
+Reading binary file 'payload'
+
+Writing file 'Stego.pgm'
+bash-4.1$ cat payload[K[K[K[K[K[K[K[K[K[K[Kbin/StegoExtract Stego.pgm unload
+
+Reading input file 'Stego.pgm'
+Hidden G#:G00987452
+Writing file 'unload'
+bash-4.1$ cat [K[K[K[Kdif[K[K[Kdiff unload payload
+bash-4.1$ cat unload
+If you want something, all the universe conspires in helping you to achieve it.
+
+Tell your heart that the fear of suffering is worse than the suffering itself. 
+And no heart has ever suffered when it goes in search of its dream.
+
+One is loved because one is loved. No reason is needed for loving.
+
+Waiting is painful. Forgetting is painful. But not knowing which to do is the worse kind of suffering.
+
+There is only one thing that makes a dream impossible to achieve: the fear of failure.
+
+You have to take risks. We will only understand the miracle of life fully when we allow the unexpected to happen.
+
+Be brave. Take risks. Nothing can substitute experience.
+bash-4.1$ cat payload
+If you want something, all the universe conspires in helping you to achieve it.
+
+Tell your heart that the fear of suffering is worse than the suffering itself. 
+And no heart has ever suffered when it goes in search of its dream.
+
+One is loved because one is loved. No reason is needed for loving.
+
+Waiting is painful. Forgetting is painful. But not knowing which to do is the worse kind of suffering.
+
+There is only one thing that makes a dream impossible to achieve: the fear of failure.
+
+You have to take risks. We will only understand the miracle of life fully when we allow the unexpected to happen.
+
+Be brave. Take risks. Nothing can substitute experience.
+bash-4.1$ bin/Stego halpf.[K[K[K[Klf. [Kpgm Stego1.pgm payload1
+
+Reading input file 'half.pgm'
+
+Reading binary file 'payload1'
+
+Writing file 'Stego1.pgm'
+bash-4.1$ bin/StegoExtract p[KStego1.pgm unload1
+
+Reading input file 'Stego1.pgm'
+Hidden G#:G00987452
+Writing file 'unload1'
+bash-4.1$ diff unload1 payload1
+bash-4.1$ cat unload1 p[K
+Warren Buffett/Quotes
+
+It takes 20 years to build a reputation and five minutes to ruin it.
+If you think about that, you'll do things differently.
+
+Price is what you pay. Value is what you get.
+
+Risk comes from not knowing what you're doing.
+Someone's sitting in the shade today because someone planted a tree a long time ago.
+
+It's far better to buy a wonderful company at a fair price than a fair company at a wonderful price.
+
+Rule No.1: Never lose money. Rule No.2: Never forget rule No.1.
+
+It's better to hang out with people better than you.
+Pick out associates whose behavior is better than yours and you'll drift in that direction.
+
+You only have to do a very few things right in your life so long as you don't do too many things wrong.
+
+In the business world, the rearview mirror is always clearer than the windshield.
+
+We simply attempt to be fearful when others are greedy and to be greedy only when others are fearful.
+
+bash-4.1$ cat payload1
+Warren Buffett/Quotes
+
+It takes 20 years to build a reputation and five minutes to ruin it.
+If you think about that, you'll do things differently.
+
+Price is what you pay. Value is what you get.
+
+Risk comes from not knowing what you're doing.
+Someone's sitting in the shade today because someone planted a tree a long time ago.
+
+It's far better to buy a wonderful company at a fair price than a fair company at a wonderful price.
+
+Rule No.1: Never lose money. Rule No.2: Never forget rule No.1.
+
+It's better to hang out with people better than you.
+Pick out associates whose behavior is better than yours and you'll drift in that direction.
+
+You only have to do a very few things right in your life so long as you don't do too many things wrong.
+
+In the business world, the rearview mirror is always clearer than the windshield.
+
+We simply attempt to be fearful when others are greedy and to be greedy only when others are fearful.
+
+bash-4.1$ exit
+
+Script done on Tue 01 Dec 2015 09:16:00 PM EST

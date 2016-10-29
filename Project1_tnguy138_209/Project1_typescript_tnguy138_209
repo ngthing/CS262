@@ -1,0 +1,153 @@
+Script started on Tue 06 Oct 2015 07:36:07 PM EDT
+bash-4.1$ uname a[K-a
+Linux zeus-0 2.6.32-573.7.1.el6.centos.plus.x86_64 #1 SMP Wed Sep 23 03:02:55 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+bash-4.1$ ls
+Makefile  Project1_typescript_tnguy138_209  symmetric_encrypt.c
+bash-4.1$ make
+gcc -o symmetric_encrypt symmetric_encrypt.c -DNDEBUG -Wall -g
+symmetric_encrypt.c:5: warning: return type of â€˜mainâ€™ is not â€˜intâ€™
+bash-4.1$ symmetric_encrypt 987452 symmetric_encrypt.c out.enc
+bash-4.1$ cat symmetric_encrypt.c
+#include <stdio.h>
+#include <stdlib.h>
+#include <assert.h>
+
+void main ( int argc, char *argv[])
+{
+        FILE *infile = NULL;
+        FILE *outfile = NULL;
+        char p,p1,c,c1; 
+	int key;	
+
+        if ( argc != 4) 
+        { printf("You have entered an invalid command line. Please try again.\n");
+          exit(1);
+        }
+
+        infile = fopen( argv[2], "r");
+       
+         if (infile == NULL)
+        { printf("Error opening input file.\n");
+          exit(1);
+        } 
+
+        outfile = fopen (argv[3], "w");
+   
+         if (outfile == NULL)
+        { printf("Error opening output file.\n");
+         exit(1);
+        }
+	
+	key = atoi(argv[1]);
+	/*printf("key = %d\n", key);*/
+	
+	srandom(key);	 
+	int r = random()%97;
+        while ((p = fgetc(infile)) != EOF)
+        {
+	// Change all displayable characters to range [0...96]
+	 if (p == '\t')
+		p1 = 0;
+	 else if (p == '\n')
+		p1 = 1; 
+	 else p1 = p - 30;
+	 c1 = p1^r;
+	
+	// Turn all output values into displayable characters
+	 if (c1 == 0) 
+		c = '\t';
+	 else if (c1 == 1)
+		c = '\n';
+	 else 
+		c = c1+30;	
+        
+	
+	 #ifndef NDEBUG
+
+                printf("%c",p);
+         #endif
+	
+	  	
+                fprintf ( outfile, "%c" , c);
+        }
+
+        fclose(infile);
+        fclose(outfile);
+        exit(0);
+}
+
+bash-4.1$ cat sy[K[Kout.enc
+a+4!&/	
+bv1.	+5t*„ea+4!&/	
+bv1.	&+ t*„ea+4!&/	
+bv#11
+0.t*„ee<5+	b'#+4bjb+4.b#0-!fb!*#0bh#0-<™—ke9ebbbbbbbbŒ‹†bh+4,+&
+bwb”††yebbbbbbbbŒ‹†bh5/.,+&
+bwb”††yebbbbbbbb!*#0b2f2sf!f!sybed+4.b)
+;ydeebbbbbbbb+,bjb#0-!bcwbnkbebbbbbbbb9b20+4.,j`›5/b*#<
+b
+4.
+0
+	b#4b+4<#&+	b!5''#4	b&+4
+tb’&
+#1
+b.0;b#-#+4t–4`kyebbbbbbbbbb
+:+.jskyebbbbbbbb7eebbbbbbbb+4,+&
+bwb,52
+4jb#0-<™p—fb`0`kyebbbbbbbebbbbbbbbb+,bj+4,+&
+bwwb”††kebbbbbbbb9b20+4.,j`0050b52
+4+4-b+42/.b,+&
+t–4`kyebbbbbbbbbb
+:+.jskyebbbbbbbb7beebbbbbbbb5/.,+&
+bwb,52
+4bj#0-<™q—fb`=`kyebbbebbbbbbbbb+,bj5/.,+&
+bwwb”††kebbbbbbbb9b20+4.,j`0050b52
+4+4-b5/.2/.b,+&
+t–4`kyebbbbbbbbb
+:+.jskyebbbbbbbb7eded)
+;bwb#.5+j#0-<™s—kyeduh20+4.,j`)
+;bwb_	–4`fb)
+;kyhueded10#4	5'j)
+;kydbed+4.b0bwb0#4	5'jk_{}yebbbbbbbb=*+&
+bjj2bwb,-
+.!j+4,+&
+kkbcwb•Œkebbbbbbbb9eduub*#4-
+b#&&b	+12&#;# &
+b!*#0#!.
+01b.5b0#4-
+b™rttt{|—edb+,bj2bwwbm–.mkedd2sbwbryedb
+&1
+b+,bj2bwwbm–4mkedd2sbwbsybedb
+&1
+b2sbwb2bgbqryedb!sbwb2s$0yededuubŽ/04b#&&b5/.2/.b<#&/
+1b+4.5b	+12&#;# &
+b!*#0#!.
+01edb+,bj!sbwwbrkbedd!bwbm–.myedb
+&1
+b+,bj!sbwwbskedd!bwbm–4myedb
+&1
+bedd!bwb!siqrydebbbbbbbbededba+,4	
+,b”~€eebbbbbbbbbbbbbbbb20+4.,j`_!`f2kyebbbbbbbbba
+4	+,ededbbdebbbbbbbbbbbbbbbb,20+4.,bjb5/.,+&
+fb`_!`bfb!kyebbbbbbbb7eebbbbbbbb,!&51
+j+4,+&
+kyebbbbbbbb,!&51
+j5/.,+&
+kyebbbbbbbb
+:+.jrkye7eebash-4.1$ symmetric_encrypt 987452 out.enc out.txt
+bash-4.1$ diff out[K[K[Ksymmetric_encrypt.c out.txt
+bash-4.1$ ls
+Makefile  out.enc  out.txt  Project1_typescript_tnguy138_209  symmetric_encrypt  symmetric_encrypt.c
+bash-4.1$ clean
+bash: clean: command not found
+bash-4.1$ make clean
+rm -f symmetric_encrypt
+bash-4.1$ ls
+Makefile  out.enc  out.txt  Project1_typescript_tnguy138_209  symmetric_encrypt.c
+bash-4.1$ rm out.enc
+bash-4.1$ rm out.txt
+bash-4.1$ ls
+Makefile  Project1_typescript_tnguy138_209  symmetric_encrypt.c
+bash-4.1$ exit
+
+Script done on Tue 06 Oct 2015 07:40:22 PM EDT
